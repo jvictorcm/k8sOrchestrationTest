@@ -1,0 +1,24 @@
+[
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/food-in-range"
+    },
+    "httpResponse": {
+      "body": "{\"restaurantList\": [{\"name\": \"Restaurant A\",\"foodList\": [{\"name\": \"Food A\",\"price\": \"2.00\"},{\"name\": \"Food B\",\"price\": \"10.00\"}]}, {\"name\": \"Restaurant B\",\"foodList\": [{\"name\": \"Food A\",\"price\": \"1.95\"}]},{\"name\": \"Restaurant C\",\"foodList\": [{\"name\": \"Food A\",\"price\": \"2.10\"}, {\"name\": \"Food B\",\"price\": \"9.00\"}]}] }",
+      "statusCode": 200,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json; charset=utf-8"
+          ]
+        }
+      ],
+      "delay": {
+        "timeUnit": "MILLISECONDS",
+        "value": 200
+      }
+    }
+  }
+]

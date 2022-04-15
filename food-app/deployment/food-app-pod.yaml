@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: food-app-pod
+spec:
+  containers:
+  - name: food-app
+    image: food-app:1
+    imagePullPolicy: Never
+    env:
+    - name: MOCKSERVER_INITIALIZATION_JSON_PATH
+      value: "/config/mockserverInitialization.json"
