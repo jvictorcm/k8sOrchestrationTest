@@ -119,3 +119,40 @@ response:
   ]
 }
 ```
+
+If our service stops?
+
+```console
+kubectl delete -n sample-ns pod food-app-pod
+curl http://127.0.0.1:38177/api/v1/namespaces/sample-ns/pods/food-app-pod:1080/proxy/food-in-range
+```
+
+response:
+
+```json
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "pods \"food-app-pod\" not found",
+  "reason": "NotFound",
+  "details": {
+    "name": "food-app-pod",
+    "kind": "pods"
+  },
+  "code": 404
+```
+
+Lets make and [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) instead of a pod
+creation with [food-app-deployment.yaml](food-app/deployment/food-app-deployment.yaml). This will prevent that our
+service is unavailable.
+
+```console
+kubectl apply -n sample-ns -f food-app-deployment.yaml
+```
+
+We can try to delete one of the pods but our deployment rules will return the pods. Also, different pods, different
+names, how to access it without knowing the names? Let's create
+a [service](https://kubernetes.io/docs/concepts/services-networking/service/). The setting is
+inside [food-app-service.yaml](food-app/deployment/food-app-service.yaml) 
