@@ -15,7 +15,7 @@ Make notes that this will open a browser page with the cluster management.
 `Opening http://127.0.0.1:38177/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
 `
 
-Lets create a deployment of apache httpd:
+Let's create a deployment of apache httpd:
 
 ```console
 kubectl create deployment apache-httpd --image=httpd
@@ -74,7 +74,7 @@ or through terminal curl:
 
 ```terminal
 curl http://127.0.0.1:38177/api/v1/namespaces/sample-ns/pods/food-app-pod:1080/proxy/food-in-range
-```
+```  
 
 response:
 
